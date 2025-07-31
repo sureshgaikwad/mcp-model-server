@@ -1,0 +1,13 @@
+# requirements.txt
+kserve>=0.11.0
+kubernetes>=27.2.0
+PyGithub>=1.59.0
+openai>=1.0.0
+pandas>=2.0.0
+numpy>=1.24.0
+pyyaml>=6.0
+requests>=2.31.0
+asyncio-mqtt>=0.16.0
+prometheus-client>=0.17.1
+fastapi>=0.104.0
+uvicorn>=0.24.0

@@ -1,0 +1,58 @@
+{
+  "name": "mcp-openshift-copilot",
+  "displayName": "MCP OpenShift Copilot",
+  "description": "Deploy applications to OpenShift AI using MCP model",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:mcp.deployRepository",
+    "onCommand:mcp.analyzeRepository",
+    "onCommand:mcp.getDeploymentStatus"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "mcp.deployRepository",
+        "title": "Deploy with MCP",
+        "category": "MCP"
+      },
+      {
+        "command": "mcp.analyzeRepository",
+        "title": "Analyze Repository",
+        "category": "MCP"
+      },
+      {
+        "command": "mcp.getDeploymentStatus",
+        "title": "Get Deployment Status",
+        "category": "MCP"
+      }
+    ],
+    "configuration": {
+      "title": "MCP OpenShift",
+      "properties": {
+        "mcp.modelEndpoint": {
+          "type": "string",
+          "default": "",
+          "description": "MCP Model serving endpoint URL"
+        },
+        "mcp.apiKey": {
+          "type": "string",
+          "default": "",
+          "description": "API key for MCP model access"
+        },
+        "mcp.defaultNamespace": {
+          "type": "string",
+          "default": "development",
+          "description": "Default OpenShift namespace for deployments"
+        }
+      }
+    }
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
+}
